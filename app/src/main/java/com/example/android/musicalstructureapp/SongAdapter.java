@@ -58,6 +58,7 @@ public class SongAdapter extends ArrayAdapter<Song>  {
 
         // Get the song title from the currentSong object and set this text on
         // the title TextView.
+
        titleTextView.setText(currentSong.getSongTitle());
 
         // Find the TextView in the list_item.xml layout with the ID artist_text_view.

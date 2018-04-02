@@ -18,7 +18,7 @@ public class ActivitySongs extends AppCompatActivity {
 
         // Create a list of songs title and artist
 
-        ArrayList<com.example.android.musicalstructureapp.Song> song = new ArrayList<Song>();
+        final ArrayList<com.example.android.musicalstructureapp.Song> song = new ArrayList<Song>();
         song.add(new Song("Stairway to Heaven", "Led Zeppelin"));
         song.add(new Song("Hey Jude", "Beatles"));
         song.add(new Song("All Along the Watchtower", "Jimi Hendrix"));
@@ -39,6 +39,7 @@ public class ActivitySongs extends AppCompatActivity {
         // adapter knows how to create list items for each item in the list.
         SongAdapter adapter = new SongAdapter(this, song);
 
+
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
         // song_list.xml layout file.
@@ -50,17 +51,27 @@ public class ActivitySongs extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
-            public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+
                 // opens the NowPlayingActivity if you click on a song
+
                 Intent songNowPlaying = new Intent(ActivitySongs.this, NowPlayingActivity.class);
+
+                //i want to pass the string with the title to the other activity
+
+                Song selected = song.get(position);
+
+                songNowPlaying.putExtra("songTitle",selected.getSongTitle());
+
+             //   songNowPlaying.putStringArrayListExtra();
+
                 startActivity(songNowPlaying);
             }
         });
-
-
     }
-
     }
 
