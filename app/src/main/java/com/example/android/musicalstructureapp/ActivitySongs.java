@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -48,13 +49,16 @@ public class ActivitySongs extends AppCompatActivity {
         // {@link ListView} will display list items for each {@link Song} in the list.
 
         listView.setAdapter(adapter);
-        listView.setOnClickListener(new View.OnClickListener() {
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                    Intent songNowPlaying = new Intent(ActivitySongs.this, NowPlayingActivity.class);
-                    startActivity(songNowPlaying);
+            public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id){
+                // opens the NowPlayingActivity if you click on a song
+                Intent songNowPlaying = new Intent(ActivitySongs.this, NowPlayingActivity.class);
+                startActivity(songNowPlaying);
             }
         });
+
 
     }
 
