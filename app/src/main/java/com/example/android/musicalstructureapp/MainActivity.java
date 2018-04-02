@@ -36,15 +36,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //code for open the ActivityArtist
 
-        TextView artist = findViewById(R.id.artist);
-        artist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent artist = new Intent(MainActivity.this, ActivityArtist.class);
-                startActivity(artist);
-            }
-        });
     }
 }

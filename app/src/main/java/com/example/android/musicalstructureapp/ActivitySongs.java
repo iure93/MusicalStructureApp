@@ -47,5 +47,7 @@ public class ActivitySongs extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
+       }
+
     }
-}
+

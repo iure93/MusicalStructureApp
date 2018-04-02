@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivitySongs" />
-        <activity android:name=".ActivityArtist" />
         <activity android:name=".NowPlayingActivity"></activity>
     </application>
 
