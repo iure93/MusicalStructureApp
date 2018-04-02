@@ -1,7 +1,9 @@
 package com.example.android.musicalstructureapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -46,8 +48,15 @@ public class ActivitySongs extends AppCompatActivity {
         // {@link ListView} will display list items for each {@link Song} in the list.
 
         listView.setAdapter(adapter);
+        listView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Intent songNowPlaying = new Intent(ActivitySongs.this, NowPlayingActivity.class);
+                    startActivity(songNowPlaying);
+            }
+        });
 
-       }
+    }
 
     }
 
