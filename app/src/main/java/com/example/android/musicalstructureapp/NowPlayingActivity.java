@@ -1,5 +1,6 @@
 package com.example.android.musicalstructureapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -83,6 +84,34 @@ public class NowPlayingActivity extends AppCompatActivity {
                     Toast.makeText(NowPlayingActivity.this, "No more songs!", Toast.LENGTH_LONG).show();
                 }
             }
+        });
+
+        //button for pause song
+        Button pause  = findViewById(R.id.pause);
+        pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(NowPlayingActivity.this, "Song paused!", Toast.LENGTH_SHORT).show();
+                }
+        });
+
+        //button for play song
+        Button play  = findViewById(R.id.play);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(NowPlayingActivity.this, "Playing song!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //button back to library
+        Button backToLibrary  = findViewById(R.id.back_to_library);
+        backToLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent library = new Intent(NowPlayingActivity.this, ActivitySongs.class);
+                startActivity(library);            }
         });
     }
 }
