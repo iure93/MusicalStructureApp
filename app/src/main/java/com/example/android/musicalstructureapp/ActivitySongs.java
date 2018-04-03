@@ -9,7 +9,12 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
+
 public class ActivitySongs extends AppCompatActivity {
+
+    public static ArrayList<com.example.android.musicalstructureapp.Song> song = new ArrayList<Song>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +23,6 @@ public class ActivitySongs extends AppCompatActivity {
 
         // Create a list of songs title and artist
 
-        final ArrayList<com.example.android.musicalstructureapp.Song> song = new ArrayList<Song>();
         song.add(new Song("Stairway to Heaven", "Led Zeppelin"));
         song.add(new Song("Hey Jude", "Beatles"));
         song.add(new Song("All Along the Watchtower", "Jimi Hendrix"));
@@ -34,6 +38,8 @@ public class ActivitySongs extends AppCompatActivity {
         song.add(new Song("Riders on the Storm", "Doors"));
         song.add(new Song("Rock and Roll", "Led Zeppelin"));
         song.add(new Song("Barracuda", "Heart"));
+
+
 
         // Create an {@link SongAdapter}, whose data source is a list of {@link Song}s. The
         // adapter knows how to create list items for each item in the list.
@@ -63,26 +69,9 @@ public class ActivitySongs extends AppCompatActivity {
 
                //i want to pass the arrayList with the title to the other activity
 
+                songNowPlaying.putExtra("position", position);
                 songNowPlaying.putExtra("song",song);
-                songNowPlaying.putExtra("position", position);
                 startActivity(songNowPlaying);
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-           /*    //i want to pass the string with the title to the other activity
-
-                songNowPlaying.putExtra("position", position);
-
-                Song selectedSong = song.get(position);
-                songNowPlaying.putExtra("songTitle",selectedSong.getSongTitle());
-
-                //i want to pass the string with the artist to the other activity
-
-                Song selectedArtist = song.get(position);
-                songNowPlaying.putExtra("songArtist",selectedArtist.getSongArtist());
-
-                startActivity(songNowPlaying);*/
             }
         });
     }
