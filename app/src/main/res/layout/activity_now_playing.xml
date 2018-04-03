@@ -11,28 +11,26 @@
     <TextView
         android:id="@+id/song_title_currently_playing"
         style="@style/SongText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:text="@string/song_title" />
 
     <TextView
         android:id="@+id/artist_currently_playing"
         style="@style/ArtistText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/song_artist" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="4"
         android:scaleType="centerCrop"
         android:src="@drawable/nowplaying" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
@@ -75,7 +73,8 @@
     <Button
         android:id="@+id/back_to_library"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
