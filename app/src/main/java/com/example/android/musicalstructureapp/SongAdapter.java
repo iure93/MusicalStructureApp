@@ -25,17 +25,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * {@link SongAdapter} is an {@link ArrayAdapter} that can provide the layout for each list item
- * based on a data source, which is a list of {@link Song} objects.
+ * {SongAdapter} is an {ArrayAdapter} that can provide the layout for each list item
+ * based on a data source, which is a list of {Song} objects.
  */
 
 public class SongAdapter extends ArrayAdapter<Song> {
-    /**
-     * Create a new {@link SongAdapter} object.
-     *
-     * @param context is the current context (i.e. Activity) that the adapter is being created in.
-     * @param songs   is the list of {@link Song}s to be displayed.
-     */
+
+     // Create a new {SongAdapter} object.
+
     public SongAdapter(Context context, ArrayList<Song> songs) {
         super(context, 0, songs);
     }

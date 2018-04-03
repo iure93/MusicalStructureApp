@@ -108,7 +108,6 @@ public class NowPlayingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent library = new Intent(NowPlayingActivity.this, ActivitySongs.class);
-
                 startActivity(library);
             }
         });
