@@ -2,8 +2,6 @@ package com.example.android.musicalstructureapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,19 +15,19 @@ public class NowPlayingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
 
-        ArrayList<Song> songArray = (ArrayList<Song>) getIntent().getSerializableExtra("song");
 
-        position = getIntent().getIntExtra("position", 0);
+       ArrayList<Song> songArray = (ArrayList<Song>) getIntent().getSerializableExtra("song");
+
+        position = getIntent().getIntExtra("position", position);
 
         String title = songArray.get(position).toString();
 
         TextView songTitleCurrentlyPlaying = (TextView) findViewById(R.id.song_title_currently_playing);
         songTitleCurrentlyPlaying.setText(title);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-/*
-        String title = getIntent().getStringExtra("songTitle");
+    /*    String title = getIntent().getStringExtra("songTitle");
         String artist = getIntent().getStringExtra("songArtist");
 
        //displays the title of the song
@@ -40,7 +38,8 @@ public class NowPlayingActivity extends AppCompatActivity {
         //displays the artist of the song
 
         TextView artistCurrentlyPlaying = (TextView) findViewById(R.id.artist_currently_playing);
-        artistCurrentlyPlaying.setText(artist);*/
+        artistCurrentlyPlaying.setText(artist);
+
 
         //button for previous song
         Button previousSong  = findViewById(R.id.previous_song);
@@ -57,8 +56,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         previousSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
-        });
+        });  */
     }
 }

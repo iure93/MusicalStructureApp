@@ -1,10 +1,12 @@
 
 package com.example.android.musicalstructureapp;
 
+import java.io.Serializable;
+
 /**
  * {@link Song) represent the title of the song and it's own artist
  */
-public class Song {
+public class Song  implements Serializable {
 
     /** song title */
     private String mSongTitle;
