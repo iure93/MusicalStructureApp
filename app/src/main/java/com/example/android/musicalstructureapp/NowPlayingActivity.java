@@ -25,6 +25,8 @@ public class NowPlayingActivity extends AppCompatActivity {
 
         final ArrayList<Song> songArray = ActivitySongs.song;
 
+        position=getIntent().getIntExtra("position", 0);
+
         String title = songArray.get(position).getSongTitle();
         String artist = songArray.get(position).getSongArtist();
 
