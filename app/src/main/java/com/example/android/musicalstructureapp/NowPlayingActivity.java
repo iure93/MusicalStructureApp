@@ -2,11 +2,15 @@ package com.example.android.musicalstructureapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class NowPlayingActivity extends AppCompatActivity {
+
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,13 +19,12 @@ public class NowPlayingActivity extends AppCompatActivity {
 
         ArrayList<Song> songArray = (ArrayList<Song>) getIntent().getSerializableExtra("song");
 
-        int position = getIntent().getIntExtra("position", 0);
+        position = getIntent().getIntExtra("position", 0);
 
         String title = songArray.get(position).toString();
 
-        TextView songTitleCurrentlyPlayinge = (TextView) findViewById(R.id.song_title_currently_playing);
-        songTitleCurrentlyPlayinge.setText(title);
-
+        TextView songTitleCurrentlyPlaying = (TextView) findViewById(R.id.song_title_currently_playing);
+        songTitleCurrentlyPlaying.setText(title);
 
 
 
@@ -31,12 +34,31 @@ public class NowPlayingActivity extends AppCompatActivity {
 
        //displays the title of the song
 
-        TextView songTitleCurrentlyPlayinge = (TextView) findViewById(R.id.song_title_currently_playing);
-        songTitleCurrentlyPlayinge.setText(title);
+        TextView songTitleCurrentlyPlaying = (TextView) findViewById(R.id.song_title_currently_playing);
+        songTitleCurrentlyPlaying.setText(title);
 
         //displays the artist of the song
 
-        TextView artistCurrentlyPlayinge = (TextView) findViewById(R.id.artist_currently_playing);
-        artistCurrentlyPlayinge.setText(artist);*/
+        TextView artistCurrentlyPlaying = (TextView) findViewById(R.id.artist_currently_playing);
+        artistCurrentlyPlaying.setText(artist);*/
+
+        //button for previous song
+        Button previousSong  = findViewById(R.id.previous_song);
+        previousSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        //button for next song
+
+        Button nextSong  = findViewById(R.id.next_song);
+        previousSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }

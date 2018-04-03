@@ -38,6 +38,8 @@
         android:orientation="horizontal">
 
         <Button
+
+            android:id="@+id/previous_song"
             android:layout_margin="32dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -45,6 +47,7 @@
             android:layout_weight="1"/>
 
         <Button
+            android:id="@+id/pause"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:layout_width="0dp"
@@ -53,6 +56,7 @@
             android:background="@drawable/pause"/>
 
         <Button
+            android:id="@+id/play"
             android:layout_margin="32dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -61,11 +65,10 @@
             />
 
         <Button
+            android:id="@+id/next_song"
             android:layout_marginRight="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
-
-
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
