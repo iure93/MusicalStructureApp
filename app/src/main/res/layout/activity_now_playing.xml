@@ -4,97 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B3E5FC"
     android:orientation="vertical"
     tools:context=".NowPlayingActivity">
 
     <TextView
         android:id="@+id/song_title_currently_playing"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:text="Song Title"
         style="@style/SongText"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/song_title" />
+
     <TextView
         android:id="@+id/artist_currently_playing"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Song Title"
         style="@style/ArtistText"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/song_artist" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="5"
         android:scaleType="centerCrop"
         android:src="@drawable/nowplaying" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
         android:orientation="horizontal">
 
         <Button
-
             android:id="@+id/previous_song"
-            android:layout_margin="32dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/back"
-            android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/back" />
 
         <Button
             android:id="@+id/pause"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
-            android:background="@drawable/pause"/>
+            android:background="@drawable/pause" />
 
         <Button
             android:id="@+id/play"
-            android:layout_margin="32dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:background="@drawable/play"
-            />
+            android:background="@drawable/play" />
 
         <Button
             android:id="@+id/next_song"
-            android:layout_marginRight="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
-            android:background="@drawable/next"/>
+            android:background="@drawable/next" />
 
     </LinearLayout>
-    <LinearLayout
+
+    <Button
+        android:id="@+id/back_to_library"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/back_to_library"
-            android:layout_margin="8dp"
-            android:layout_marginBottom="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bb"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/MenuText"
-            android:gravity="center"
-            android:text="Back to library"
-            />
-
-    </LinearLayout>
-
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#3F51B5"
+        android:gravity="center"
+        android:text="@string/back_to_library"
+        android:textColor="#FFFFFF" />
 </LinearLayout>

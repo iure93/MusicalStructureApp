@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MusicalStructureApp</string>
+    <string name="back_to_library">Back to library</string>
+    <string name="song_artist">Song Artist</string>
+    <string name="song_title">Song Title</string>
+    <string name="song_library">SONG LIBRARY</string>
+    <string name="music_is_life">Music is life!</string>
+    <string name="back_to_home">Back to home</string>
 </resources>

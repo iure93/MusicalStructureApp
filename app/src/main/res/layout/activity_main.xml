@@ -11,8 +11,7 @@
         style="@style/MenuText"
         android:layout_weight="1"
         android:fontFamily="serif-monospace"
-        android:text="Music is life!"
-        />
+        android:text="@string/music_is_life" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -21,17 +20,12 @@
         android:scaleType="centerCrop"
         android:src="@drawable/sfondo1" />
 
-
     <Button
         android:id="@+id/songs"
         style="@style/MenuText"
         android:layout_weight="1"
+        android:background="#3F51B5"
         android:fontFamily="serif-monospace"
-        android:text="SONG LIBRARY"
-        />
-
-
-
-
-
+        android:text="@string/song_library"
+        android:textColor="#FFFFFF" />
 </LinearLayout>

@@ -6,23 +6,27 @@ import java.io.Serializable;
 /**
  * {@link Song) represent the title of the song and it's own artist
  */
-public class Song  implements Serializable {
+public class Song implements Serializable {
 
-    /** song title */
+    /**
+     * song title
+     */
     private String mSongTitle;
 
-    /** song artist */
+    /**
+     * song artist
+     */
     private String martist;
 
     /**
      * Create a new Song object.
      *
      * @param songTitle is the song title
-     * @param artist is the song artist
+     * @param artist    is the song artist
      */
 
-    public Song (String songTitle, String artist) {
-        mSongTitle= songTitle;
+    public Song(String songTitle, String artist) {
+        mSongTitle = songTitle;
         martist = artist;
     }
 

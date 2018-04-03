@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
-
     int position;
+    int newPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,8 @@ public class NowPlayingActivity extends AppCompatActivity {
 
         final ArrayList<Song> songArray = ActivitySongs.song;
 
-        position=getIntent().getIntExtra("position", 0);
+        position = getIntent().getIntExtra("position", 0);
+        newPosition= position;
 
         String title = songArray.get(position).getSongTitle();
         String artist = songArray.get(position).getSongArtist();
@@ -33,73 +34,67 @@ public class NowPlayingActivity extends AppCompatActivity {
         songTitleCurrentlyPlayinge.setText(title);
         artistCurrentlyPlaying.setText(artist);
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //button for previous song
-        Button previousSong  = findViewById(R.id.previous_song);
+        Button previousSong = findViewById(R.id.previous_song);
         previousSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 TextView songTitleCurrentlyPlayinge = (TextView) findViewById(R.id.song_title_currently_playing);
                 TextView artistCurrentlyPlaying = (TextView) findViewById(R.id.artist_currently_playing);
+                newPosition-=1;
 
-                position-=1;
+                if (newPosition >= 0) {
 
-                if(position>=0){
-
-                ArrayList<Song> songArray = ActivitySongs.song;
-                String title = songArray.get(position).getSongTitle();
-                String artist = songArray.get(position).getSongArtist();
-                songTitleCurrentlyPlayinge.setText(title);
-                artistCurrentlyPlaying.setText(artist);
-                }
-                else {
-                    position+=1;
+                    ArrayList<Song> songArray = ActivitySongs.song;
+                    String title = songArray.get(newPosition).getSongTitle();
+                    String artist = songArray.get(newPosition).getSongArtist();
+                    songTitleCurrentlyPlayinge.setText(title);
+                    artistCurrentlyPlaying.setText(artist);
+                } else {
+                    newPosition += 1;
                     Toast.makeText(NowPlayingActivity.this, "No more songs!", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
         //button for next song
-        Button nextSong  = findViewById(R.id.next_song);
+        Button nextSong = findViewById(R.id.next_song);
         nextSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 TextView songTitleCurrentlyPlayinge = (TextView) findViewById(R.id.song_title_currently_playing);
                 TextView artistCurrentlyPlaying = (TextView) findViewById(R.id.artist_currently_playing);
-                position+=1;
 
-                if(position<songArray.size()){
+                newPosition += 1;
 
-                ArrayList<Song> songArray = ActivitySongs.song;
-                String title = songArray.get(position).getSongTitle();
-                String artist = songArray.get(position).getSongArtist();
-                songTitleCurrentlyPlayinge.setText(title);
-                artistCurrentlyPlaying.setText(artist);
-                }
+                if (newPosition < songArray.size()) {
 
-                else{
-                    position-=1;
+                    ArrayList<Song> songArray = ActivitySongs.song;
+                    String title = songArray.get(newPosition).getSongTitle();
+                    String artist = songArray.get(newPosition).getSongArtist();
+                    songTitleCurrentlyPlayinge.setText(title);
+                    artistCurrentlyPlaying.setText(artist);
+                } else {
+                    newPosition -= 1;
                     Toast.makeText(NowPlayingActivity.this, "No more songs!", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
         //button for pause song
-        Button pause  = findViewById(R.id.pause);
+        Button pause = findViewById(R.id.pause);
         pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Toast.makeText(NowPlayingActivity.this, "Song paused!", Toast.LENGTH_SHORT).show();
-                }
+            }
         });
 
         //button for play song
-        Button play  = findViewById(R.id.play);
+        Button play = findViewById(R.id.play);
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,12 +103,14 @@ public class NowPlayingActivity extends AppCompatActivity {
         });
 
         //button back to library
-        Button backToLibrary  = findViewById(R.id.back_to_library);
+        Button backToLibrary = findViewById(R.id.back_to_library);
         backToLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent library = new Intent(NowPlayingActivity.this, ActivitySongs.class);
-                startActivity(library);            }
+
+                startActivity(library);
+            }
         });
     }
 }

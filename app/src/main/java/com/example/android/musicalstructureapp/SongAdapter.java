@@ -29,12 +29,12 @@ import java.util.ArrayList;
  * based on a data source, which is a list of {@link Song} objects.
  */
 
-public class SongAdapter extends ArrayAdapter<Song>  {
+public class SongAdapter extends ArrayAdapter<Song> {
     /**
      * Create a new {@link SongAdapter} object.
      *
      * @param context is the current context (i.e. Activity) that the adapter is being created in.
-     * @param songs is the list of {@link Song}s to be displayed.
+     * @param songs   is the list of {@link Song}s to be displayed.
      */
     public SongAdapter(Context context, ArrayList<Song> songs) {
         super(context, 0, songs);
@@ -59,7 +59,7 @@ public class SongAdapter extends ArrayAdapter<Song>  {
         // Get the song title from the currentSong object and set this text on
         // the title TextView.
 
-       titleTextView.setText(currentSong.getSongTitle());
+        titleTextView.setText(currentSong.getSongTitle());
 
         // Find the TextView in the list_item.xml layout with the ID artist_text_view.
 
@@ -70,11 +70,8 @@ public class SongAdapter extends ArrayAdapter<Song>  {
 
         artistTextView.setText(currentSong.getSongArtist());
 
-
-
         // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
         // the ListView.
-
         return listItemView;
     }
 }
