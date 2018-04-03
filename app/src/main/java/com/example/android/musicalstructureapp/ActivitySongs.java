@@ -61,15 +61,25 @@ public class ActivitySongs extends AppCompatActivity {
 
                 Intent songNowPlaying = new Intent(ActivitySongs.this, NowPlayingActivity.class);
 
-                //i want to pass the string with the title to the other activity
+                //i want to pass the arrayList with the title to the other activity
 
-                Song selected = song.get(position);
-
-                songNowPlaying.putExtra("songTitle",selected.getSongTitle());
-
-             //   songNowPlaying.putStringArrayListExtra();
+                songNowPlaying.putExtra("song",song);
+                songNowPlaying.putExtra("position", position);
 
                 startActivity(songNowPlaying);
+
+
+                /*//i want to pass the string with the title to the other activity
+
+                Song selectedSong = song.get(position);
+                songNowPlaying.putExtra("songTitle",selectedSong.getSongTitle());
+
+                //i want to pass the string with the artist to the other activity
+
+                Song selectedArtist = song.get(position);
+                songNowPlaying.putExtra("songArtist",selectedArtist.getSongArtist());
+
+                */
             }
         });
     }

@@ -68,6 +68,9 @@ public class SongAdapter extends ArrayAdapter<Song>  {
         // Get the artist from the currentSong object and set this text on
         // the artist TextView.
 
+        artistTextView.setText(currentSong.getSongArtist());
+
+
 
         // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
         // the ListView.

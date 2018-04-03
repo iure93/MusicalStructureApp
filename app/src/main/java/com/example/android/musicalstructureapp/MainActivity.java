@@ -14,16 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //code for open the NowPlaying Activity
-
-        TextView nowPlaying = findViewById(R.id.now_playing);
-        nowPlaying.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent nowPlaying = new Intent(MainActivity.this, NowPlayingActivity.class);
-                startActivity(nowPlaying);
-            }
-        });
 
         //code for open the ActivitySongs
 
@@ -35,5 +25,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(songs);
             }
         });
+
+        //code for open the ArtistsActivity
+
+
+      /*  final TextView artists = findViewById(R.id.artist);
+        artists.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent artist = new Intent(MainActivity.this, ArtistsActivity.class);
+                startActivity(artist);
+            }
+        });
+
+        //code for open the PlaylistActivity
+
+
+        final TextView playlist = findViewById(R.id.playlist);
+        playlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent playlist = new Intent(MainActivity.this, PlaylistActivity.class);
+                startActivity(playlist);
+            }
+        });*/
     }
 }

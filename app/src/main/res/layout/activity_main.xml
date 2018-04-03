@@ -7,13 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/now_playing"
-        style="@style/MenuText"
-        android:layout_weight="1"
-        android:fontFamily="serif-monospace"
-        android:text="NOW PLAYING"
-        />
+
 
     <ImageView
         android:layout_width="match_parent"
@@ -22,12 +16,29 @@
         android:scaleType="centerCrop"
         android:src="@drawable/sfondo1" />
 
+
     <TextView
         android:id="@+id/songs"
         style="@style/MenuText"
         android:layout_weight="1"
         android:fontFamily="serif-monospace"
         android:text="SONGS"
+        />
+
+    <TextView
+        android:id="@+id/artist"
+        style="@style/MenuText"
+        android:layout_weight="1"
+        android:fontFamily="serif-monospace"
+        android:text="ARTISTS"
+        />
+
+    <TextView
+        android:id="@+id/playlist"
+        style="@style/MenuText"
+        android:layout_weight="1"
+        android:fontFamily="serif-monospace"
+        android:text="MY PLAYLIST"
         />
 
 

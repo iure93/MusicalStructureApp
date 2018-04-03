@@ -36,7 +36,7 @@ public class Song {
      * Get the artist of the song.
      */
 
-    public String getartist() {
+    public String getSongArtist() {
         return martist;
     }
 
